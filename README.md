@@ -4,7 +4,7 @@
 Comet
 
 ### MVP
-Description: E-commerce site for the galaxy's greatest gym shorts
+Description: E-commerce site the greatest gym shorts in the galaxy
 
 Features
 - User can register/login
