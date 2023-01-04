@@ -1,0 +1,12 @@
+.title {
+    margin-top: 80px;
+}
+
+a {
+    color: #F2F4F3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C6CA53;
+}
