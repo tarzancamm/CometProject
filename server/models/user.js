@@ -1,4 +1,4 @@
-//! Model of the User database table
+//! Model of the User db table
 
 // Import DataTypes from sequelize and my database
 const { db } = require("../util/database");

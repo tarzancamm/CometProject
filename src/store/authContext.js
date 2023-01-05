@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, createContext } from "react";
 
 let logoutTimer;
 
-// Holds valuus to be used by components?
+// Holds default values and is used by components to simply connect to context. Helps IDE know what context is available to access. Components DO NOT access these object values.
 const AuthContext = createContext({
   token: "",
   login: () => {},
@@ -89,6 +89,7 @@ export const AuthContextProvider = (props) => {
     }
   }, [localData, logoutHandler]);
 
+  // Holds values to be used by components conected to auth context
   const contextValue = {
     token: token,
     login: loginHandler,

@@ -3,7 +3,7 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 
 import Header from './components/PermanentLayout/Header';
 import HomeScreen from './components/Home/HomeScreen'
-import Auth from './components/PermanentLayout/Auth'
+import Auth from './components/Login/Auth'
 
 function App() {
   return (

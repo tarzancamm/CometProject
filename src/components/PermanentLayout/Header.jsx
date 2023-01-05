@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import AuthContext from "../../store/authContext";
 
 import styles from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
 const Header = () => {
   const [searchedProducts, setSearchedProducts] = useState("");
+  const authCtx = useContext(AuthContext);
 
   const changeProductsHandler = (event) => {
     setSearchedProducts(event.target.value);
@@ -26,9 +28,16 @@ const Header = () => {
                 className={styles.search}
               />
             </li>
-            <li>
-              <NavLink to="/auth">Login</NavLink>
-            </li>
+            {authCtx.token && (
+              <li>
+                <button onClick={() => authCtx.logout()}>Logout</button>
+              </li>
+            )}
+            {!authCtx.token && (
+              <li>
+                <NavLink to="/auth">Login</NavLink>
+              </li>
+            )}
             <li>
               <HeaderCartButton />
             </li>

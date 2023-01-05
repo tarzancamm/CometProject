@@ -1,7 +1,6 @@
 // Imports
 require("dotenv").config();
 const { JWT_SECRET_KEY } = process.env;
-const { db } = require("../util/database");
 const { User } = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -41,7 +40,7 @@ module.exports = {
         console.log(newUser);
         console.log("Token: ", token);
 
-        const exp = new Date.now() + 86400; // Sets expiration to 24 hrs
+        const exp = Date.now() + 86400; // Sets expiration to 24 hrs
 
         // Sends back data to be used to login new user
         res.status(200).send({
@@ -51,7 +50,7 @@ module.exports = {
           exp: exp,
         });
       }
-    } catch {
+    } catch (err) {
       console.log("Error registering user");
       console.log(err);
       res.sendStatus(400);
@@ -60,35 +59,42 @@ module.exports = {
 
   login: async (req, res) => {
     try {
-      const {username, password } = req.body; // Desctructure request body
+      const { username, password } = req.body; // Desctructure request body
 
       let foundUser = await User.findOne({ where: { username: username } }); // Finds user in db
 
-      // userAuthenticated returns boolean
+      // userAuthenticated compares passwords and returns boolean
       if (foundUser) {
         const userAuthenticated = bcrypt.compareSync(
           password,
           foundUser.hashedPass
         );
+        // Creates token IF user is authenticated
+        if (userAuthenticated) {
+          const token = createToken(
+            foundUser.dataValues.username,
+            foundUser.dataValues.id
+          );
+
+          const exp = Date.now() + 86400; // Sets expiration to 24 hrs
+
+          // Sends data to be used in login handler on frontend
+          res.status(200).send({
+            username: foundUser.dataValues.username,
+            userId: foundUser.dataValues.id,
+            token: token,
+            exp: exp,
+          });
+        } else {
+          console.log("Incorrect password");
+        }
+      } else {
+        console.log("User not found");
       }
-
-      // Creates token IF user is authenticated
-      if (userAuthenticated) {
-        const token = createToken(
-          foundUser.dataValues.username,
-          foundUser.dataValues.id
-        );
-      }
-
-      const exp = new Date.now() + 86400 // Sets expiration to 24 hrs
-
-      // Sends data to be used in login handler on frontend
-      res.status(200).send({
-        username: newUser.dataValues.username,
-        userId: newUser.dataValues.id,
-        token: token,
-        exp: exp,
-      })
-    } catch {}
+    } catch (err) {
+      console.log("Error logging in");
+      console.log(err);
+      res.sendStatus(400);
+    }
   },
 };
