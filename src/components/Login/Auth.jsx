@@ -35,6 +35,7 @@ const Auth = () => {
   // const [password, setPassword] = useState("");
   const [register, setRegister] = useState(true);
 
+  // usernameReducer will automatically run when action is dispatched
   const [usernameState, dispatchUsername] = useReducer(usernameReducer, {
     value: '',
     isValid: null,
@@ -44,6 +45,7 @@ const Auth = () => {
     isValid: null,
   })
 
+  // Connection to authContext
   const authCtx = useContext(AuthContext);
 
   // Handlers for sending data to useReducer (input & validation)
@@ -93,6 +95,9 @@ const Auth = () => {
     console.log('Login or Register submission handler called frontend')
   };
 
+  const {isValid : usernameIsValid} = usernameState
+  const {isValid : passwordIsValid} = passwordState
+
   return (
     <div className={styles.page}>
       <h2 className={styles.title}>Login or Sign Up</h2>
@@ -109,7 +114,7 @@ const Auth = () => {
           )}
           {register && (
             <input
-              className={styles["form-input"]}
+              className={styles['form-input']}
               type="text"
               placeholder="Enter last name"
               value={lastName}
@@ -117,7 +122,7 @@ const Auth = () => {
             />
           )}
           <input
-            className={styles["form-input"]}
+            className={`${usernameIsValid === false ? styles.invalid : styles['form-input']}`}
             type="text"
             placeholder="Enter email address"
             value={usernameState.value}
@@ -125,7 +130,7 @@ const Auth = () => {
             onBlur={validateUsernameHandler}
           />
           <input
-            className={styles["form-input"]}
+            className={`${passwordIsValid === false ? styles.invalid : styles['form-input']}`}
             type="text"
             placeholder="Enter password"
             value={passwordState.value}

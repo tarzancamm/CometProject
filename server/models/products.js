@@ -1,4 +1,4 @@
-//! Model of the User db table
+//! Model for products db table
 
 // Import DataTypes from sequelize and my database
 const { db } = require("../util/database");
@@ -6,22 +6,15 @@ const { DataTypes } = require("sequelize");
 
 // Define table and an object holding the table columns and data types
 module.exports = {
-  User: db.define("user", {
+  Products: db.define("products", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    hashedPass: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    name: DataTypes.STRING,
+    price: DataTypes.FLOAT, // Allows for two decimal places
+    description: DataTypes.TEXT,
   }),
 };

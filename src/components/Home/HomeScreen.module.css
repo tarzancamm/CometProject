@@ -1,9 +1,23 @@
-.title {
-    margin-top: 80px;
+.intro {
+    margin-left: 8%;
+}
+
+.intro-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.intro-description {
+    font-size: 1rem;
+    color: #434343;
+    margin-bottom: 5%;
+    width: 600px;
 }
 
 a {
-    color: #F2F4F3;
+    color: #242423;
     text-decoration: none;
 }
 

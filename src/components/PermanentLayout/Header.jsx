@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import AuthContext from "../../store/authContext";
 
 import styles from "./Header.module.css";
+import logo from '../../assets/logo.png'
 import HeaderCartButton from "./HeaderCartButton";
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <p className={styles.logo}>Comet</p>
+      <NavLink to='/'><img className={styles.logo} src={logo} alt="" /></NavLink>
       <nav>
         <div>
           <ul className={styles.nav}>
