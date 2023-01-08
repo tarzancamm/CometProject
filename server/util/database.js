@@ -1,6 +1,6 @@
 //! Create database and specify how will communicate with it
 
-const { Sequelize } = require("sequelize");
+const Sequelize = require("sequelize");
 require("dotenv").config();
 const { DATABASE_URL } = process.env;
 

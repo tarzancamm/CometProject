@@ -1,9 +1,9 @@
-const { Products } = require("../models/products");
+const { Product } = require("../models/product");
 
 const allProducts = [
   {
     name: "Cometkazi Shorts",
-    price: 59.95,
+    price: 69.95,
     description: "Wow these are great shorts",
   },
   {
@@ -38,13 +38,13 @@ const allProducts = [
   },
   {
     name: "Pump Shorts",
-    price: 59.95,
+    price: 49.95,
     description: "Wow these are great shorts",
   },
 ];
 
 const seed = async () => {
-  await Products.bulkCreate(allProducts);
+  await Product.bulkCreate(allProducts);
 };
 
 module.exports = seed;

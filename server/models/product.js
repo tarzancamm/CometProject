@@ -6,7 +6,7 @@ const { DataTypes } = require("sequelize");
 
 // Define table and an object holding the table columns and data types
 module.exports = {
-  Products: db.define("products", {
+  Product: db.define("products", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,

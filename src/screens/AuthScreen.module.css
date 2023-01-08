@@ -1,6 +1,7 @@
 .page {
     margin-top: 4.5rem;
-    width: 100%;
+    height: 800px;
+    width: 100vw;
 }
 
 .title {

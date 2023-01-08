@@ -2,8 +2,10 @@ import './App.css';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 import Header from './components/PermanentLayout/Header';
-import HomeScreen from './components/Home/HomeScreen'
-import Auth from './components/Login/Auth'
+import Footer from './components/PermanentLayout/Footer';
+import HomeScreen from './screens/HomeScreen'
+import AuthScreen from './screens/AuthScreen'
+import ProductDetailsScreen from './screens/ProductDetailsScreen';
 
 function App() {
   return (
@@ -11,9 +13,11 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomeScreen/>} />
-        <Route path='/auth' element={<Auth/>} />
-        <Route path = '*' element={<Navigate to='/' />} />
+        <Route path='/auth' element={<AuthScreen/>} />
+        <Route path='*' element={<Navigate to='/' />} />
+        <Route path='/products/:id' element={<ProductDetailsScreen />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

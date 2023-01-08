@@ -1,3 +1,10 @@
 .product-container {
-    height: 1000px;
+    height: 1600px;
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
 }

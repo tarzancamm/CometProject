@@ -1,8 +1,8 @@
 import React, { useState, useContext, useReducer } from "react";
-import AuthContext from "../../store/authContext";
+import AuthContext from "../store/authContext";
 import axios from "axios";
 // import cx from "classnames";
-import styles from "./Auth.module.css";
+import styles from "./AuthScreen.module.css";
 
 
 const usernameReducer = (prevState, action) => {
@@ -28,7 +28,7 @@ const passwordReducer = (prevState, action) => {
 }
 
 
-const Auth = () => {
+const AuthScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   // const [username, setUsername] = useState("");
@@ -152,4 +152,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default AuthScreen;

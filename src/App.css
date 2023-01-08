@@ -74,5 +74,6 @@ h1 {
 
   .app {
 	background-color: #EFEFEF;
+	min-width: 100vw;
 	min-height: 100vh;
   }
