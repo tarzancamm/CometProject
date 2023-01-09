@@ -4,7 +4,7 @@ import AuthContext from "../../store/authContext";
 
 import styles from "./Header.module.css";
 import logo from '../../assets/logo.png'
-import HeaderCartButton from "./HeaderCartButton";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
   const [searchedProducts, setSearchedProducts] = useState("");
@@ -40,7 +40,7 @@ const Header = () => {
               </li>
             )}
             <li>
-              <HeaderCartButton />
+              <Cart />
             </li>
           </ul>
         </div>

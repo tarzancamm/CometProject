@@ -2,7 +2,7 @@ const { Product } = require("../models/product");
 
 const allProducts = [
   {
-    name: "Cometkazi Shorts",
+    name: "Comet Shorts",
     price: 69.95,
     description: "Wow these are great shorts",
   },

@@ -4,7 +4,7 @@ const { db } = require("../util/database");
 const { DataTypes } = require("sequelize");
 
 module.exports = {
-  CartItem: db.define("cartitems", {
+  CartItem: db.define("cartitem", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,

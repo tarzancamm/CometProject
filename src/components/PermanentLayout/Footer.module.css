@@ -3,4 +3,12 @@
     width: 100vw;
     color: #EFEFEF;
     background-color: #0E181B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 1.5rem;
+    font-weight: bold;
 }

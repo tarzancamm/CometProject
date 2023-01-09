@@ -1,0 +1,20 @@
+.cartbtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.show-cart {
+    right: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hide-cart {
+    right: -350px;
+    transition: all 0.3s ease-in-out;
+}

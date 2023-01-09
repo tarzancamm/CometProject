@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 // Handler for creating a json web token
 const createToken = (username, id) => {
-  return jwt.sign({ username, id }, JWT_SECRET_KEY, { expiresIn: 86400 }); // Sign key with payload (username & id), JWT Secret and expiration of 24 hrs.
+  return jwt.sign({ username, id }, JWT_SECRET_KEY, { expiresIn: 86400000 }); // Sign key with payload (username & id), JWT Secret and expiration of 24 hrs.
 };
 
 // Login & Logout functionality
@@ -40,7 +40,7 @@ module.exports = {
         console.log(newUser);
         console.log("Token: ", token);
 
-        const exp = Date.now() + 86400; // Sets expiration to 24 hrs
+        const exp = Date.now() + 86400000; // Sets expiration to 24 hrs
 
         // Sends back data to be used to login new user
         res.status(200).send({
@@ -76,7 +76,7 @@ module.exports = {
             foundUser.dataValues.id
           );
 
-          const exp = Date.now() + 86400; // Sets expiration to 24 hrs
+          const exp = Date.now() + 86400000; // Sets expiration to 24 hrs
 
           // Sends data to be used in login handler on frontend
           res.status(200).send({

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import AuthContext from "../store/authContext";
 import axios from "axios";
 import styles from "./ProductDetailsScreen.module.css";
 
@@ -7,6 +8,7 @@ const ProductDetailsScreen = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
   const url = "http://localhost:5555";
+  const authCtx = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(`${url}/products/${id}`).then((res) => {
@@ -15,9 +17,29 @@ const ProductDetailsScreen = () => {
     });
   }, [id]);
 
+  const addToCartHandler = () => {
+    const body = {
+      userId: authCtx.userId,
+    };
+    axios
+      .post(`${url}/cart/${id}`, body)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log("Unable to add to cart");
+      });
+  };
+
   return (
     <section className={styles["product-details"]}>
       <div>ProductDetailsScreen</div>
+      <div className={styles.product}>
+        <p>{product.name}</p>
+        <p>{product.price}</p>
+        <button onClick={addToCartHandler}>Add to Cart</button>
+      </div>
     </section>
   );
 };
