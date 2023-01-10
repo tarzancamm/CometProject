@@ -21,6 +21,7 @@ const {
   getProducts,
   getOneProduct,
   addToCart,
+  deleteFromCart,
   getUserCart,
 } = require("./controllers/shop");
 
@@ -36,7 +37,7 @@ Product.hasMany(CartItem);
 CartItem.belongsTo(Product);
 // Products and photos
 Product.hasMany(Photo);
-Photo.hasOne(Product);
+Photo.belongsTo(Product);
 
 // Endpoints
 server.post("/register", register);
@@ -45,6 +46,7 @@ server.get("/products", getProducts);
 server.get("/products/:id", getOneProduct);
 server.get("/cart/:userId", getUserCart);
 server.post("/cart/:id", addToCart);
+server.delete('/cart/:cartItemId', deleteFromCart)
 
 // Listening
 // Sync models/associations to DB and have server listen. This will sync DB before server starts up

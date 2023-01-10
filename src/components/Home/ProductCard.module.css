@@ -27,6 +27,12 @@
     border-top: 1px solid #c6c5c5;
 }
 
+.image {
+    height: 275px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
 .name {
     font-weight: bold;
     font-size: 1.3rem;

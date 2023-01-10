@@ -1,3 +1,8 @@
+.image {
+    height: 700px;
+    width: auto;
+}
+
 .product-details {
     height: 1000px;
     width: 100vw;

@@ -1,7 +1,9 @@
 .cartbtn {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding: 5px 20px;
 }
 
 .icon {
@@ -9,12 +11,30 @@
     height: 1.2rem;
 }
 
-.show-cart {
+.modal {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 450px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px;
+    z-index: 10;
+}
+
+.cart-show {
     right: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.hide-cart {
-    right: -350px;
+.cart-hide {
+    right: -500px;
     transition: all 0.3s ease-in-out;
+}
+
+.checkout {
+    margin-top: 20%;
+    height: 50px;
+    width: 300px;
 }

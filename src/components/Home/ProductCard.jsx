@@ -13,8 +13,12 @@ const ProductCard = (props) => {
 
   return (
     <div className={styles["product-card"]}>
+      <img
+        className={styles.image}
+        src={props.products.photos[0].url}
+        alt="shorts"
+      />
       <div className={styles["product-card__desc"]}>
-        <img src="" alt="" />
         <p className={styles.name}>{props.products.name}</p>
         <p className={styles.desc}>{props.products.description}</p>
       </div>

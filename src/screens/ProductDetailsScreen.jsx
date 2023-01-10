@@ -5,7 +5,7 @@ import axios from "axios";
 import styles from "./ProductDetailsScreen.module.css";
 
 const ProductDetailsScreen = () => {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState([]);
   const { id } = useParams();
   const url = "http://localhost:5555";
   const authCtx = useContext(AuthContext);
@@ -24,7 +24,7 @@ const ProductDetailsScreen = () => {
     axios
       .post(`${url}/cart/${id}`, body)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -34,8 +34,8 @@ const ProductDetailsScreen = () => {
 
   return (
     <section className={styles["product-details"]}>
-      <div>ProductDetailsScreen</div>
       <div className={styles.product}>
+        {/* <img className={styles.image} src={product.photos[0].url} alt="shorts" /> */}
         <p>{product.name}</p>
         <p>{product.price}</p>
         <button onClick={addToCartHandler}>Add to Cart</button>

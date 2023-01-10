@@ -7,7 +7,9 @@ const { CartItem } = require("../models/cartItem");
 module.exports = {
   getProducts: async (req, res) => {
     try {
-      const products = await Product.findAll();
+      const products = await Product.findAll({
+        include: [Photo],
+      });
       res.status(200).send(products);
     } catch (err) {
       console.log(err);
@@ -19,7 +21,10 @@ module.exports = {
   getOneProduct: async (req, res) => {
     try {
       const { id } = req.params;
-      const product = await Product.findOne({ where: { id: id } });
+      const product = await Product.findOne({
+        where: { id: id },
+        include: [Photo],
+      });
       res.status(200).send(product);
     } catch (err) {
       console.log(err);
@@ -32,15 +37,27 @@ module.exports = {
     try {
       const { userId } = req.body;
       const productId = req.params.id;
-      // let findCart = await CartItem.findOne({where: {id: userId}})
-      const newCartItem = await CartItem.create({
+      await CartItem.create({
         userId,
         productId,
       });
-      res.status(200).send();
-    } catch {
+      res.sendStatus(200);
+    } catch (err) {
       console.log(err);
       console.log("Problem adding to cart");
+      res.sendStatus(400);
+    }
+  },
+
+  deleteFromCart: async (req, res) => {
+    try {
+      const { cartItemId } = req.params;
+      console.log(cartItemId);
+      await CartItem.destroy({ where: { id: cartItemId } });
+      res.sendStatus(200);
+    } catch (err) {
+      console.log(err);
+      console.log("Error deleting item from cart");
       res.sendStatus(400);
     }
   },
@@ -60,7 +77,6 @@ module.exports = {
         ],
       });
       res.status(200).send(cart);
-      console.log(cart);
     } catch (err) {
       console.log(err);
       console.log("Problem retrieving user cart");
