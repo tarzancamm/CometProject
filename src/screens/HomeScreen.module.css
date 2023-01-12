@@ -1,5 +1,10 @@
 .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 5%;
 }
 
 .intro-title {
@@ -12,8 +17,27 @@
 .intro-description {
     font-size: 1rem;
     color: #434343;
-    margin-bottom: 5%;
     width: 600px;
+}
+
+.search {
+    height: 1.5rem;
+    width: 15rem;
+    border: none;
+    border-bottom: 1px solid #0E181B;
+    background-color: transparent;
+    /* background-image: url('../assets/magnifying-glass.png'); */
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+.search::placeholder {
+    font-family: 'Manrope', sans-serif;
+    color: #0E181B;
+}
+
+.search:focus {
+    outline: none;
 }
 
 a {

@@ -5,42 +5,42 @@ const allProducts = [
   {
     name: "Comet Shorts",
     price: 69.95,
-    description: "Wow these are great shorts",
+    description: "Best for: Versatility",
   },
   {
-    name: "UrMoms Shorts",
-    price: 59.95,
-    description: "Wow these are great shorts",
+    name: "Bolt Shorts",
+    price: 55.95,
+    description: "Best for: Conditioning, Stretching",
   },
   {
-    name: "Booty Shorts",
-    price: 59.95,
-    description: "Wow these are great shorts",
+    name: "Ultimate Sweat Shorts",
+    price: 49.95,
+    description: "Best for: Lifting, Chilling",
   },
   {
-    name: "Wowza Shorts",
-    price: 59.95,
-    description: "Wow these are great shorts",
+    name: "Jupiter Shorts",
+    price: 55.95,
+    description: "Best for: Cross Training",
   },
   {
-    name: "Sick Shorts",
+    name: "Banksi Shorts",
     price: 59.95,
-    description: "Wow these are great shorts",
+    description: "Best for: Strength Training, Chilling",
   },
   {
-    name: "Chill Shorts",
-    price: 59.95,
-    description: "Wow these are great shorts",
-  },
-  {
-    name: "IDK Shorts",
-    price: 59.95,
-    description: "Wow these are great shorts",
+    name: "Universe Shorts",
+    price: 69.95,
+    description: "Best for: Lifting, Tough Gym Days",
   },
   {
     name: "Pump Shorts",
+    price: 59.95,
+    description: "Best for: Powerlifting",
+  },
+  {
+    name: "Earth Shorts",
     price: 49.95,
-    description: "Wow these are great shorts",
+    description: "Best for: Chilling, Outdoor Adventures",
   },
 ];
 
@@ -57,32 +57,32 @@ let photos = [
   },
   {
     productId: 3,
-    url: "https://cdn.shopify.com/s/files/1/0251/7377/products/Interval7_Black_Front_ef3413a6-9bd0-42d0-ba99-dbf2fd3b0d56_1296x.png?v=1656406941",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA4.19.22Johnny-42_6642588d-1485-4f0d-a884-64457a7aa006_800x.jpg?v=1668735184",
     primaryPhoto: true,
   },
   {
     productId: 4,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/DSC2322_1200x1800.jpg?v=1653082564",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/DSC02738_800x.jpg?v=1625186089",
     primaryPhoto: true,
   },
   {
     productId: 5,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA7.29.21-64_664x996.jpg?v=1653088619",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/Rudy_Black_Friday-495_800x.jpg?v=1669087079",
     primaryPhoto: true,
   },
   {
     productId: 6,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA7.29.21-64_664x996.jpg?v=1653088619",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/Rudy_June_21497_800x.jpg?v=1655229346",
     primaryPhoto: true,
   },
   {
     productId: 7,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA7.29.21-64_664x996.jpg?v=1653088619",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA2.12.22-23_800x.jpg?v=1653077119",
     primaryPhoto: true,
   },
   {
     productId: 8,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/YLA7.29.21-64_664x996.jpg?v=1653088619",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/Rudy_Black_Friday-445_800x.jpg?v=1668198112",
     primaryPhoto: true,
   },
 ];

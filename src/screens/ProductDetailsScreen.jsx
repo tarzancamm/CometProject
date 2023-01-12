@@ -2,18 +2,24 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import AuthContext from "../store/authContext";
 import axios from "axios";
+import { GrStar } from "react-icons/gr";
 import styles from "./ProductDetailsScreen.module.css";
 
 const ProductDetailsScreen = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({}); // Curly braces instead of bracket bc only one object
+  const [image, setImage] = useState("");
   const { id } = useParams();
   const url = "http://localhost:5555";
   const authCtx = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(`${url}/products/${id}`).then((res) => {
-      setProduct(res.data);
       console.log(res.data);
+      setProduct(res.data);
+      let primaryPhoto = res.data.photos.filter((img) => {
+        return img.primaryPhoto === true;
+      });
+      setImage(primaryPhoto[0].url);
     });
   }, [id]);
 
@@ -34,11 +40,21 @@ const ProductDetailsScreen = () => {
 
   return (
     <section className={styles["product-details"]}>
-      <div className={styles.product}>
-        {/* <img className={styles.image} src={product.photos[0].url} alt="shorts" /> */}
-        <p>{product.name}</p>
-        <p>{product.price}</p>
-        <button onClick={addToCartHandler}>Add to Cart</button>
+      <img className={styles.img} src={image} alt="shorts" />
+      <div className={styles.details}>
+        <p className={styles["details-name"]}>{product.name}</p>
+        <div className={styles['details-rating']}>
+          <GrStar />
+          <GrStar />
+          <GrStar />
+          <GrStar />
+          <GrStar />
+          <p>(64)</p>
+        </div>
+        <p className={styles["details-price"]}>{product.price}</p>
+        <button className={styles.cartbtn} onClick={addToCartHandler}>
+          Add to Cart
+        </button>
       </div>
     </section>
   );

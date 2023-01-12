@@ -17,16 +17,19 @@ const ProductCard = (props) => {
         className={styles.image}
         src={props.products.photos[0].url}
         alt="shorts"
+        onClick={handleShop}
       />
-      <div className={styles["product-card__desc"]}>
-        <p className={styles.name}>{props.products.name}</p>
-        <p className={styles.desc}>{props.products.description}</p>
-      </div>
-      <div className={styles["product-card__price"]}>
-        <p className={styles.price}>{props.products.price}</p>
-        <button className={styles["product-card__btn"]} onClick={handleShop}>
-          SHOP
-        </button>
+      <div className={styles["product-card__details"]}>
+        <div className={styles["product-card__desc"]}>
+          <p className={styles.name} onClick={handleShop}>{props.products.name}</p>
+          <p className={styles.desc}>{props.products.description}</p>
+        </div>
+        <div className={styles["product-card__price"]}>
+          <p className={styles.price}>${props.products.price}</p>
+          <button className={styles["product-card__btn"]} onClick={handleShop}>
+            SHOP
+          </button>
+        </div>
       </div>
     </div>
   );

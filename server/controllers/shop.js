@@ -73,7 +73,15 @@ module.exports = {
             attributes: ["username"], // List of attributes I want to select from model
             required: true,
           },
-          Product,
+          {
+            model: Product, // Create nested include statement to access Photo table, which has a relation to Product table
+            required: true,
+            include: [
+              {
+                model: Photo,
+              },
+            ],
+          },
         ],
       });
       res.status(200).send(cart);

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { HiArrowLongRight } from "react-icons/hi2";
 import AuthContext from "../../store/authContext";
 import axios from "axios";
 
@@ -13,6 +14,7 @@ const Cart = () => {
   const { userId } = useContext(AuthContext);
   const url = "http://localhost:5555";
 
+  // Sets state for number of cart items and items (including photo)
   const getCart = () => {
     axios
       .get(`${url}/cart/${userId}`)
@@ -25,7 +27,7 @@ const Cart = () => {
         console.log(err);
         console.log("Unable to add to cart");
       });
-      setShowCart(true)
+    setShowCart(true);
   };
 
   // Checks if cart has any items
@@ -54,13 +56,14 @@ const Cart = () => {
 
   // Maps cart items into cart
   const theCart = (
-    <ul>
+    <ul className={styles.carty}>
       {items.map((item) => (
         <CartItem
           key={item.id}
           name={item.product.name}
           price={item.product.price}
           desc={item.product.desc}
+          photo={item.product.photos[0].url}
           onRemove={() => removeCartItemHandler(item.id)}
         />
       ))}
@@ -80,15 +83,18 @@ const Cart = () => {
           styles.modal
         }`}
       >
-        <div>
-          <button onClick={() => setShowCart(!showCart)}>X</button>
-        </div>
-        {theCart}
-        {cartHasItems && (
-          <button className={styles.checkout}>
-            Checkout - {totalAmount(items)}
+        <div className={styles["cart-content"]}>
+          <button
+            className={styles["exit-btn"]}
+            onClick={() => setShowCart(!showCart)}
+          >
+            <HiArrowLongRight />
           </button>
-        )}
+          <div className={styles.cartitems}>
+            {theCart}
+            {cartHasItems && <button className={styles.checkout}>checkout - ${totalAmount(items)}</button>}
+          </div>
+        </div>
       </div>
     </div>
   );
