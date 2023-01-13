@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { HiArrowLongRight } from "react-icons/hi2";
 import AuthContext from "../../store/authContext";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 import CartIcon from "./CartIcon";
 import CartItem from "./CartItem";
@@ -45,12 +46,34 @@ const Cart = () => {
   // Removes item from cart
   const removeCartItemHandler = (cartItemId) => {
     axios
-      .delete(`${url}/cart/${cartItemId}`)
+      .delete(`${url}/cartitem/${cartItemId}`)
       .then(() => {
         getCart();
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+
+  const checkoutHandler = () => {
+    axios
+      .delete(`${url}/cart/${userId}`) // userId garnered from authContext
+      .then(() => {
+        getCart();
+        Swal.fire({
+          icon: "success",
+          iconColor: "#C6CA53",
+          color: "#0E181B",
+          title: "Some Sweet Shorts Are On The Way",
+          padding: "2rem 3rem 5rem 3rem",
+          showConfirmButton: false,
+          timer: "2300",
+          timerProgressBar: true,
+        });
+        console.log("Cart deleted (checkout)");
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
 
@@ -92,7 +115,11 @@ const Cart = () => {
           </button>
           <div className={styles.cartitems}>
             {theCart}
-            {cartHasItems && <button className={styles.checkout}>checkout - ${totalAmount(items)}</button>}
+            {cartHasItems && (
+              <button className={styles.checkout} onClick={checkoutHandler}>
+                checkout - ${totalAmount(items)}
+              </button>
+            )}
           </div>
         </div>
       </div>

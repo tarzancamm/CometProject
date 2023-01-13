@@ -23,6 +23,7 @@ const {
   addToCart,
   deleteFromCart,
   getUserCart,
+  deleteCart
 } = require("./controllers/shop");
 
 // Middleware to run on every endpoint
@@ -45,8 +46,9 @@ server.post("/login", login);
 server.get("/products", getProducts);
 server.get("/products/:id", getOneProduct);
 server.get("/cart/:userId", getUserCart);
-server.post("/cart/:id", addToCart);
-server.delete('/cart/:cartItemId', deleteFromCart)
+server.post("/cartitem/:id", addToCart);
+server.delete('/cartitem/:cartItemId', deleteFromCart)
+server.delete('/cart/:userId', deleteCart)
 
 // Listening
 // Sync models/associations to DB and have server listen. This will sync DB before server starts up

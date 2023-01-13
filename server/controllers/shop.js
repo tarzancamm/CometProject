@@ -91,4 +91,16 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+
+  deleteCart: async (req, res) => {
+    try {
+        const { userId } = req.params;
+        await CartItem.destroy({ where: { userId: userId } });
+        res.sendStatus(200);
+    } catch (err) {
+        console.log(err)
+        console.log("Problem deleting user cart (checkout)")
+        res.sendStatus(400)
+    }
+  }
 };

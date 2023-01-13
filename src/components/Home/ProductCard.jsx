@@ -7,8 +7,9 @@ const ProductCard = (props) => {
   const navigate = useNavigate();
 
   // Navigate to product details screen
-  const handleShop = () => {
+  const handleShopBtn = () => {
     navigate(`/products/${props.products.id}`);
+    window.scrollTo(0, 0) // Scrolls to top of product details screen
   };
 
   return (
@@ -17,16 +18,16 @@ const ProductCard = (props) => {
         className={styles.image}
         src={props.products.photos[0].url}
         alt="shorts"
-        onClick={handleShop}
+        onClick={handleShopBtn}
       />
       <div className={styles["product-card__details"]}>
         <div className={styles["product-card__desc"]}>
-          <p className={styles.name} onClick={handleShop}>{props.products.name}</p>
+          <p className={styles.name} onClick={handleShopBtn}>{props.products.name}</p>
           <p className={styles.desc}>{props.products.description}</p>
         </div>
         <div className={styles["product-card__price"]}>
           <p className={styles.price}>${props.products.price}</p>
-          <button className={styles["product-card__btn"]} onClick={handleShop}>
+          <button className={styles["product-card__btn"]} onClick={handleShopBtn}>
             SHOP
           </button>
         </div>

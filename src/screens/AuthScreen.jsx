@@ -1,4 +1,5 @@
 import React, { useState, useContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../store/authContext";
 import axios from "axios";
 import styles from "./AuthScreen.module.css";
@@ -31,6 +32,7 @@ const AuthScreen = () => {
   // const [username, setUsername] = useState("");
   // const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
+  const navigate = useNavigate()
 
   // usernameReducer will automatically run when action is dispatched
   const [usernameState, dispatchUsername] = useReducer(usernameReducer, {
@@ -77,6 +79,8 @@ const AuthScreen = () => {
       .post(register ? `${url}/register` : `${url}/login`, body)
       .then((res) => {
         authCtx.login(res.data.token, res.data.userId, res.data.exp);
+          navigate(`/`);
+          window.scrollTo(0, 0) // Scrolls to top of product details screen
         // setFirstName('')
         // setLastName('')
         // setPassword('')

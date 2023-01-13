@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import AuthContext from "../store/authContext";
 import axios from "axios";
 import { GrStar } from "react-icons/gr";
+import Swal from "sweetalert2";
+
 import styles from "./ProductDetailsScreen.module.css";
 
 const ProductDetailsScreen = () => {
@@ -28,8 +30,17 @@ const ProductDetailsScreen = () => {
       userId: authCtx.userId,
     };
     axios
-      .post(`${url}/cart/${id}`, body)
+      .post(`${url}/cartitem/${id}`, body)
       .then((res) => {
+        Swal.fire({
+          icon: "success",
+          iconColor: '#477998',
+          color: '#0E181B',
+          title: "Added to Cart",
+          showConfirmButton: false,
+          padding: '1.2rem 0 4rem 0',
+          timer: '1200',
+        });
         console.log(res.data);
       })
       .catch((err) => {
@@ -43,7 +54,7 @@ const ProductDetailsScreen = () => {
       <img className={styles.img} src={image} alt="shorts" />
       <div className={styles.details}>
         <p className={styles["details-name"]}>{product.name}</p>
-        <div className={styles['details-rating']}>
+        <div className={styles["details-rating"]}>
           <GrStar />
           <GrStar />
           <GrStar />
@@ -51,10 +62,28 @@ const ProductDetailsScreen = () => {
           <GrStar />
           <p>(64)</p>
         </div>
-        <p className={styles["details-price"]}>{product.price}</p>
-        <button className={styles.cartbtn} onClick={addToCartHandler}>
-          Add to Cart
-        </button>
+        <p className={styles["details-price"]}>${product.price}</p>
+        <div className={styles.size}>
+          <h4>Size:</h4>
+          <form>
+            <input type="radio" name="size" />
+            <label htmlFor="Small">S</label>
+            <input type="radio" name="size" />
+            <label htmlFor="Small">M</label>
+            <input type="radio" name="size" />
+            <label htmlFor="Small">L</label>
+            <input type="radio" name="size" />
+            <label htmlFor="Small">XL</label>
+          </form>
+        </div>
+        <div className={styles.addtocart}>
+          <p>
+            Get it by <span>Wednesday, February 27th</span>
+          </p>
+          <button className={styles.cartbtn} onClick={addToCartHandler}>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </section>
   );

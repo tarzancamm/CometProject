@@ -9,6 +9,10 @@ import Cart from "../Cart/Cart";
 const Header = () => {
   const authCtx = useContext(AuthContext);
 
+  const autoScrollHandler = () => {
+    window.scrollTo(0, 0) 
+  }
+
   return (
     <header className={styles.header}>
       <NavLink to='/'><img className={styles.logo} src={logo} alt="" /></NavLink>
@@ -22,7 +26,7 @@ const Header = () => {
             )}
             {!authCtx.token && (
               <li>
-                <NavLink className={styles.link} to="/auth">Login</NavLink>
+                <NavLink className={styles.link} to="/auth" onClick={autoScrollHandler} >Login</NavLink>
               </li>
             )}
             <li>
