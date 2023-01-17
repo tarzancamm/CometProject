@@ -13,7 +13,7 @@ const allProducts = [
     description: "Best for: Conditioning, Stretching",
   },
   {
-    name: "Ultimate Sweat Shorts",
+    name: "Sweatshorts",
     price: 49.95,
     description: "Best for: Lifting, Chilling",
   },
@@ -38,7 +38,7 @@ const allProducts = [
     description: "Best for: Powerlifting",
   },
   {
-    name: "Earth Shorts",
+    name: "Galaxy Shorts",
     price: 49.95,
     description: "Best for: Chilling, Outdoor Adventures",
   },
