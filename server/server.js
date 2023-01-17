@@ -54,8 +54,8 @@ server.delete('/cart/:userId', deleteCart)
 // Sync models/associations to DB and have server listen. This will sync DB before server starts up
 // Can use force to DROP tables while building app / making changes
 // db.sync({ force: true }).then(() => seed())
-db.sync({force: true})
-  .then(() => seed())
+db.sync()
+  // .then(() => seed())
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Listening on port: ${PORT}`);
