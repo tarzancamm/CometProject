@@ -3,7 +3,7 @@
 //Imports
 require("dotenv").config();
 const { db } = require("./util/database");
-const { PORT } = process.env; //5555
+const { PORT } = process.env || 5555; //5555
 const seed = require("./util/seed");
 const express = require("express");
 const cors = require("cors"); // Client and Server can run on different ports and still share resources across 'origins'
