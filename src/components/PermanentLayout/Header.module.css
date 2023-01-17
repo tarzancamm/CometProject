@@ -14,7 +14,7 @@
 .logo {
   width: 200px;
   height: auto;
-  margin-left: 8rem;
+  margin-left: 6rem;
 }
 
 .nav {
@@ -24,24 +24,74 @@
   gap: 1rem;
   float: left;
   color: #242423;
-  margin-right: 8rem;
+  margin-right: 6rem;
 }
 
-.nav .link {
+.dropdown .link {
   background-color: transparent;
   border: none;
-  color: #0e181b;
+  color: #0E181B;
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
 }
 
-.nav .link:hover {
+.dropdown .link:hover {
   cursor: pointer;
   color: #c6ca53;
 }
 
-.link {
-  color: #0e181b;
-  font-family: "Outfit", sans-serif;
-  font-size: 1rem;
+.user-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.user-icon:hover {
+  cursor: pointer;
+  color: #c6ca53;
+}
+
+@keyframes dropdown {
+  from {opacity: 30%;}
+  to {opacity: 100%;}
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  margin-top: 4.5rem;
+  right: 10rem;
+  background-color: #FFFFFF;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 25;
+  box-shadow: 1px 1px 3px #7a7a7a;
+  animation-name: dropdown;
+  animation-duration: .3s;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+  .header {
+    height: 4rem;
+  }
+
+  .logo {
+    width: 125px;
+    margin-left: 1rem;
+  }
+
+  .nav {
+    margin-right: 1rem;
+  }
+
+  .dropdown {
+    margin-top: 3.5rem;
+    right: 6rem;
+  }
+
 }

@@ -7,7 +7,6 @@ import styles from "./HomeScreen.module.css";
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([]);
-  const [searchedProducts, setSearchedProducts] = useState("");
 
   const getProducts = () => {
     const url = "http://localhost:5555";
@@ -28,10 +27,6 @@ const HomeScreen = () => {
     getProducts();
   }, []);
 
-  const changeProductsHandler = (event) => {
-    setSearchedProducts(event.target.value);
-  };
-
   return (
     <div>
       <HeroSection />
@@ -46,13 +41,13 @@ const HomeScreen = () => {
             performance with style. Tested by atheletes.
           </p>
         </div>
-        <input
+        {/* <input
           type="text"
           onChange={changeProductsHandler}
           value={searchedProducts}
           placeholder="Search"
           className={styles.search}
-        />
+        /> */}
       </div>
       <ProductContainer products={products} />
     </div>

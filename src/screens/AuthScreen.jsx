@@ -29,19 +29,19 @@ const passwordReducer = (prevState, action) => {
 const AuthScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
-  const navigate = useNavigate()
+  const [loginValid, setLoginValid] = useState(true);
+  const [registerValid, setRegisterValid] = useState(true);
+  const navigate = useNavigate();
 
   // usernameReducer will automatically run when action is dispatched
   const [usernameState, dispatchUsername] = useReducer(usernameReducer, {
     value: "",
-    isValid: null,
+    isValid: true,
   });
   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
     value: "",
-    isValid: null,
+    isValid: true,
   });
 
   // Connection to authContext
@@ -74,26 +74,31 @@ const AuthScreen = () => {
       password: passwordState.value,
     };
 
-    //! Must find out how to reset state to empty strings
-    axios
-      .post(register ? `${url}/register` : `${url}/login`, body)
-      .then((res) => {
-        authCtx.login(res.data.token, res.data.userId, res.data.exp);
+    register &&
+      axios
+        .post(`${url}/register`, body)
+        .then((res) => {
+          authCtx.login(res.data.token, res.data.userId, res.data.exp);
           navigate(`/`);
-          window.scrollTo(0, 0) // Scrolls to top of product details screen
-        // setFirstName('')
-        // setLastName('')
-        // setPassword('')
-        // setUsername('')
-      })
-      .catch((err) => {
-        // setFirstName('')
-        // setLastName('')
-        // setPassword('')
-        // setUsername('')
-        console.log(err);
-      });
-    console.log("Login or Register submission handler called frontend");
+          window.scrollTo(0, 0);
+        })
+        .catch((err) => {
+          console.log(err);
+          setRegisterValid(false);
+        });
+
+    !register &&
+      axios
+        .post(`${url}/login`, body)
+        .then((res) => {
+          authCtx.login(res.data.token, res.data.userId, res.data.exp);
+          navigate(`/`);
+          window.scrollTo(0, 0);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoginValid(false);
+        });
   };
 
   const { isValid: usernameIsValid } = usernameState;
@@ -101,11 +106,19 @@ const AuthScreen = () => {
 
   return (
     <div className={styles.page}>
-      <div className={styles['title-container']}>
+      <div className={styles["title-container"]}>
         <h2 className={styles.title}>{register ? "Sign Up" : "Login"}</h2>
       </div>
       <div className={styles.form}>
         <form className={styles["auth-form"]} onSubmit={submitHandler}>
+          {!loginValid && (
+            <p className={styles["invalid-entry"]}>
+              Incorrect email or password
+            </p>
+          )}
+          {!registerValid && (
+            <p className={styles["invalid-entry"]}>Email already in use or invalid email/password</p>
+          )}
           {register && (
             <input
               className={styles["form-input"]}
@@ -124,26 +137,42 @@ const AuthScreen = () => {
               onChange={(e) => setLastName(e.target.value)}
             />
           )}
-          <input
-            className={`${
-              usernameIsValid === false ? styles.invalid : styles["form-input"]
-            }`}
-            type="text"
-            placeholder="Email"
-            value={usernameState.value}
-            onChange={usernameChangeHandler}
-            onBlur={validateUsernameHandler}
-          />
-          <input
-            className={`${
-              passwordIsValid === false ? styles.invalid : styles["form-input"]
-            }`}
-            type="password"
-            placeholder="Password"
-            value={passwordState.value}
-            onChange={passwordChangeHandler}
-            onBlur={validatePasswordHandler}
-          />
+          <div>
+            {!usernameIsValid && (
+              <p className={styles["invalid-entry"]}>Enter a valid email</p>
+            )}
+            <input
+              className={`${
+                usernameIsValid === false
+                  ? styles.invalid
+                  : styles["form-input"]
+              }`}
+              type="text"
+              placeholder="Email"
+              value={usernameState.value}
+              onChange={usernameChangeHandler}
+              onBlur={validateUsernameHandler}
+            />
+          </div>
+          <div>
+            {!passwordIsValid && (
+              <p className={styles["invalid-entry"]}>
+                Minimum 7 characters long
+              </p>
+            )}
+            <input
+              className={`${
+                passwordIsValid === false
+                  ? styles.invalid
+                  : styles["form-input"]
+              }`}
+              type="password"
+              placeholder="Password"
+              value={passwordState.value}
+              onChange={passwordChangeHandler}
+              onBlur={validatePasswordHandler}
+            />
+          </div>
           <button className={styles["form-btn"]}>
             {register ? "Create" : "Sign In"}
           </button>

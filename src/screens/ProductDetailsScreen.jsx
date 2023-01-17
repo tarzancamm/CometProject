@@ -34,12 +34,12 @@ const ProductDetailsScreen = () => {
       .then((res) => {
         Swal.fire({
           icon: "success",
-          iconColor: '#477998',
-          color: '#0E181B',
+          iconColor: "#477998",
+          color: "#0E181B",
           title: "Added to Cart",
           showConfirmButton: false,
-          padding: '1.2rem 0 4rem 0',
-          timer: '1200',
+          padding: "1.2rem 0 4rem 0",
+          timer: "1200",
         });
         console.log(res.data);
       })
@@ -53,16 +53,20 @@ const ProductDetailsScreen = () => {
     <section className={styles["product-details"]}>
       <img className={styles.img} src={image} alt="shorts" />
       <div className={styles.details}>
-        <p className={styles["details-name"]}>{product.name}</p>
-        <div className={styles["details-rating"]}>
-          <GrStar />
-          <GrStar />
-          <GrStar />
-          <GrStar />
-          <GrStar />
-          <p>(64)</p>
+        <div className={styles["details-intro"]}>
+          <div>
+            <p className={styles["details-name"]}>{product.name}</p>
+            <div className={styles["details-rating"]}>
+              <GrStar />
+              <GrStar />
+              <GrStar />
+              <GrStar />
+              <GrStar />
+              <p>(64)</p>
+            </div>
+          </div>
+          <p className={styles["details-price"]}>${product.price}</p>
         </div>
-        <p className={styles["details-price"]}>${product.price}</p>
         <div className={styles.size}>
           <h4>Size:</h4>
           <form>

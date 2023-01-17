@@ -1,5 +1,5 @@
 .footer {
-    height: 200px;
+    height: 150px;
     width: 100vw;
     color: #EFEFEF;
     background-color: #0E181B;
@@ -11,4 +11,5 @@
 .footer p {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'Mulish', sans-serif;;
 }

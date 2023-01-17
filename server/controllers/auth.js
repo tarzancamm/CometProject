@@ -5,7 +5,7 @@ const { User } = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Handler for creating a json web token
+// Handler for creating a json web token, which helps persist state
 const createToken = (username, id) => {
   return jwt.sign({ username, id }, JWT_SECRET_KEY, { expiresIn: 86400000 }); // Sign key with payload (username & id), JWT Secret and expiration of 24 hrs.
 };
@@ -14,12 +14,22 @@ const createToken = (username, id) => {
 module.exports = {
   register: async (req, res) => {
     try {
-      const { firstName, lastName, username, password } = req.body; // Destructures request body
+      const { firstName, lastName, username, password } = req.body;
+
+      // if (password.length < 7) {
+      //   res.status(400).send("User password fewer than 7 characters")
+      // }
 
       let foundUser = await User.findOne({ where: { username: username } }); // Checks if user already exists
+      let validPassword = password.length > 6
+      let validEmail = username.includes('@')
 
       if (foundUser) {
         res.status(400).send("User already exists");
+      } else if (!validPassword) {
+        res.status(400).send("Password has fewer than 7 characters")
+      } else if (!validEmail) {
+        res.status(400).send("Invalid email address")
       } else {
         const salt = bcrypt.genSaltSync(10); // Defines salt
         const hash = bcrypt.hashSync(password, salt); // Hashes password
@@ -87,9 +97,11 @@ module.exports = {
           });
         } else {
           console.log("Incorrect password");
+          res.sendStatus(400)
         }
       } else {
         console.log("User not found");
+        res.sendStatus(400)
       }
     } catch (err) {
       console.log("Error logging in");

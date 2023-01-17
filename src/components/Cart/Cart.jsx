@@ -64,8 +64,8 @@ const Cart = () => {
           icon: "success",
           iconColor: "#C6CA53",
           color: "#0E181B",
-          title: "Some Sweet Shorts Are On The Way",
-          padding: "2rem 3rem 5rem 3rem",
+          title: "Your Shorts Are On The Way",
+          padding: "2rem 2rem 5rem 2rem",
           showConfirmButton: false,
           timer: "2300",
           timerProgressBar: true,
@@ -78,7 +78,7 @@ const Cart = () => {
   };
 
   // Maps cart items into cart
-  const theCart = (
+  const TheCart = (
     <ul className={styles.carty}>
       {items.map((item) => (
         <CartItem
@@ -114,7 +114,7 @@ const Cart = () => {
             <HiArrowLongRight />
           </button>
           <div className={styles.cartitems}>
-            {theCart}
+            {items.length > 0 ? TheCart : <h4>Your Cart Is Empty</h4>}
             {cartHasItems && (
               <button className={styles.checkout} onClick={checkoutHandler}>
                 checkout - ${totalAmount(items)}

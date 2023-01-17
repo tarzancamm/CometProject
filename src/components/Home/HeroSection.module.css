@@ -37,3 +37,27 @@
     background-color: #EFEFEF;
     color: #0E181B;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .hero {
+        height: 50vh;
+        padding: 0;
+        background-size: cover;
+        background-position: -200px -5px;
+        background-repeat: no-repeat;
+    }
+
+    .content {
+        padding-top: 65%;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        margin-right: 8%;
+    }
+
+    .hero a {
+        margin-right: 8%;
+        font-size: .8rem;
+    }
+}
