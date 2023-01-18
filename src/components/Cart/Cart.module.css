@@ -21,6 +21,10 @@
     color: #0E181B;
 }
 
+.icon:hover {
+    color: #C6CA53;
+}
+
 /* Cart Modal Window */
 .modal {
     position: absolute;
