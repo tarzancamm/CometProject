@@ -43,7 +43,7 @@
 
 .form-input {
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 300px;
     background-color: #FFFFFF;
     outline-color: #477998;
@@ -71,8 +71,12 @@
 
 .form-input::placeholder {
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
+    font-size: .9rem;
     color: #7A7A7A;
+}
+
+.form-input:placeholder-shown {
+    font-size: .9rem;
 }
 
 .form-btn {
@@ -115,6 +119,6 @@
     }
 
     .form-btn {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
