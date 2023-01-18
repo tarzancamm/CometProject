@@ -43,7 +43,7 @@
 
 .form-input {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: 300px;
     background-color: #FFFFFF;
     outline-color: #477998;
@@ -65,18 +65,18 @@
 .invalid-entry {
     color: #d30303;
     font-family: 'Outfit', sans-serif;
-    font-size: .8rem;
+    font-size: 1rem;
     padding-bottom: .2rem;
 }
 
 .form-input::placeholder {
     font-family: 'Outfit', sans-serif;
-    font-size: .9rem;
+    font-size: 1rem;
     color: #7A7A7A;
 }
 
 .form-input:placeholder-shown {
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
 .form-btn {
