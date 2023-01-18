@@ -10,8 +10,9 @@
 
 .product-card__btn {
     font-size: .8rem;
+    color: #0E181B;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #0E181B;
     letter-spacing: 1px;
     padding: 0;
     cursor: pointer;
