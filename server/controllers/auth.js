@@ -16,10 +16,6 @@ module.exports = {
     try {
       const { firstName, lastName, username, password } = req.body;
 
-      // if (password.length < 7) {
-      //   res.status(400).send("User password fewer than 7 characters")
-      // }
-
       let foundUser = await User.findOne({ where: { username: username } }); // Checks if user already exists
       let validPassword = password.length > 6
       let validEmail = username.includes('@')
@@ -62,7 +58,7 @@ module.exports = {
       }
     } catch (err) {
       console.log("Error registering user");
-      console.log(err);
+      console.log(err.response);
       res.sendStatus(400);
     }
   },
