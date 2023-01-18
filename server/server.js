@@ -64,7 +64,7 @@ server.get('/*', function (req, res) {
 // Can use force to DROP tables while building app / making changes
 // db.sync({ force: true }).then(() => seed())
 db.sync()
-  .then(() => seed())
+  // .then(() => seed())
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Listening on port: ${PORT}`);
