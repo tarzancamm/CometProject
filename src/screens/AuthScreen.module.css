@@ -101,3 +101,9 @@
     cursor: pointer;
     color: #C6CA53;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .title-container {
+        margin-top: 4rem;
+    }
+}

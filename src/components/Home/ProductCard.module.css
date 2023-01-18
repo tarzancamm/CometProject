@@ -11,6 +11,7 @@
 .product-card__btn {
     font-size: .8rem;
     color: #0E181B;
+    background-color: transparent;
     border: none;
     border-bottom: 1px solid #0E181B;
     letter-spacing: 1px;
