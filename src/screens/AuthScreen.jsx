@@ -65,7 +65,7 @@ const AuthScreen = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const url = "https://cometproject.herokuapp.com/";
+    const url = "https://cometproject.herokuapp.com";
 
     const body = {
       firstName: firstName,
