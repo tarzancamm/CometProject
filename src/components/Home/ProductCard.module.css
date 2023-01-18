@@ -70,4 +70,8 @@
     .product-card__details {
         padding: 1rem 0rem;
     }
+
+    .product-card__price {
+        padding-top: .5rem;
+    }
 }
