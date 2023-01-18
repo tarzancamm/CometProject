@@ -1,7 +1,7 @@
 {
   "name": "ecomm",
   "version": "0.1.0",
-  "main": "server/server.js",
+  "main": "./server/server.js",
   "proxy": "http://localhost:5555",
   "nodemonConfig": {
     "ext": "js,sql",
@@ -23,6 +23,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "nodemon": "^2.0.20",
+    "path": "^0.12.7",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
     "react": "^18.2.0",
@@ -38,13 +39,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "go": "react-scripts start",
+    "start": "node ./server/server.js && npm build",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
-    },
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
