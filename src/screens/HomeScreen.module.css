@@ -10,11 +10,13 @@
 .intro-title {
     margin-top: 50px;
     margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
     font-size: 1.3rem;
     letter-spacing: 1px;
 }
 
 .intro-description {
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     color: #434343;
     width: 40vw;
