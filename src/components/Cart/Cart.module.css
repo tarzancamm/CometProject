@@ -48,6 +48,7 @@
 /* Actual Cart */
 .exit-btn {
     border: none;
+    color: #0E181B;
     background-color: transparent;
     font-size: 2rem;
     font-weight: bold;
@@ -103,6 +104,10 @@
     .modal {
         width: 100vw;
         height: 100vh;
+    }
+
+    .exit-btn {
+        float: left;
     }
 
     .checkout {

@@ -1,7 +1,6 @@
 .product-card {
     height: 475px;
     width: 300px;
-    /* border: 1px solid black; */
 }
 
 .product-card__details {
@@ -64,4 +63,10 @@
 .price {
     font-size: .9rem;
     color: #7A7A7A;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .product-card__details {
+        padding: 1rem 0rem;
+    }
 }
