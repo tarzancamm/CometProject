@@ -69,13 +69,14 @@
 .cartitems h4 {
     text-align: center;
     margin-top: 2rem;
-
+    font-family: 'Outfit', sans-serif;
 }
 
 .carty {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    font-family: 'Outfit', sans-serif;
 }
 
 .checkout {
