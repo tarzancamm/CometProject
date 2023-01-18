@@ -12,7 +12,7 @@ const HomeScreen = () => {
     const url = "http://localhost:5555";
 
     axios
-      .get(`${url}/products`)
+      .get(`/products`)
       .then((res) => {
         setProducts(res.data);
         console.log(res.data);

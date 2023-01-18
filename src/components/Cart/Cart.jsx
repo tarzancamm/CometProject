@@ -18,7 +18,7 @@ const Cart = () => {
   // Sets state for number of cart items and items (including photo)
   const getCart = () => {
     axios
-      .get(`${url}/cart/${userId}`)
+      .get(`/cart/${userId}`)
       .then((res) => {
         console.log(res.data);
         setNumCartItems(res.data.length);
@@ -46,7 +46,7 @@ const Cart = () => {
   // Removes item from cart
   const removeCartItemHandler = (cartItemId) => {
     axios
-      .delete(`${url}/cartitem/${cartItemId}`)
+      .delete(`/cartitem/${cartItemId}`)
       .then(() => {
         getCart();
       })
@@ -57,7 +57,7 @@ const Cart = () => {
 
   const checkoutHandler = () => {
     axios
-      .delete(`${url}/cart/${userId}`) // userId garnered from authContext
+      .delete(`/cart/${userId}`) // userId garnered from authContext
       .then(() => {
         getCart();
         Swal.fire({

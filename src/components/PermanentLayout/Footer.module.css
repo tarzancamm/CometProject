@@ -1,6 +1,7 @@
 .footer {
     height: 150px;
     width: 100vw;
+    bottom: 0;
     color: #EFEFEF;
     background-color: #0E181B;
     display: flex;

@@ -76,7 +76,7 @@ const AuthScreen = () => {
 
     register &&
       axios
-        .post(`${url}/register`, body)
+        .post(`/register`, body)
         .then((res) => {
           authCtx.login(res.data.token, res.data.userId, res.data.exp);
           navigate(`/`);
@@ -89,7 +89,7 @@ const AuthScreen = () => {
 
     !register &&
       axios
-        .post(`${url}/login`, body)
+        .post(`/login`, body)
         .then((res) => {
           authCtx.login(res.data.token, res.data.userId, res.data.exp);
           navigate(`/`);

@@ -15,7 +15,7 @@ const ProductDetailsScreen = () => {
   const authCtx = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`${url}/products/${id}`).then((res) => {
+    axios.get(`/products/${id}`).then((res) => {
       console.log(res.data);
       setProduct(res.data);
       let primaryPhoto = res.data.photos.filter((img) => {
@@ -30,7 +30,7 @@ const ProductDetailsScreen = () => {
       userId: authCtx.userId,
     };
     axios
-      .post(`${url}/cartitem/${id}`, body)
+      .post(`/cartitem/${id}`, body)
       .then((res) => {
         Swal.fire({
           icon: "success",
