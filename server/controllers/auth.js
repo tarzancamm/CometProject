@@ -58,7 +58,7 @@ module.exports = {
       }
     } catch (err) {
       console.log("Error registering user");
-      console.log(err.response);
+      console.log(err);
       res.sendStatus(400);
     }
   },

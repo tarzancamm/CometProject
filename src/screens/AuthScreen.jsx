@@ -83,7 +83,7 @@ const AuthScreen = () => {
           window.scrollTo(0, 0);
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.response);
           setRegisterValid(false);
         });
 
