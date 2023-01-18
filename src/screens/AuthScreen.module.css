@@ -91,6 +91,7 @@
 
 .form-btn-switch {
     color: #7A7A7A;
+    background-color: transparent;
     border: none;
     font-size: 1rem;
     letter-spacing: 1px;
