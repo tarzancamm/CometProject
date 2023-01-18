@@ -68,4 +68,8 @@
     .hero h2 {
         font-size: 3rem;
     }
+
+    .content {
+        padding-top: 25%;
+    }
 }
