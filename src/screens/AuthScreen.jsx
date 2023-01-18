@@ -65,7 +65,7 @@ const AuthScreen = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const url = "http://localhost:5555";
+    const url = "https://cometproject.herokuapp.com/";
 
     const body = {
       firstName: firstName,
@@ -76,7 +76,7 @@ const AuthScreen = () => {
 
     register &&
       axios
-        .post(`/register`, body)
+        .post(`${url}/register`, body)
         .then((res) => {
           authCtx.login(res.data.token, res.data.userId, res.data.exp);
           navigate(`/`);
@@ -89,7 +89,7 @@ const AuthScreen = () => {
 
     !register &&
       axios
-        .post(`/login`, body)
+        .post(`${url}/login`, body)
         .then((res) => {
           authCtx.login(res.data.token, res.data.userId, res.data.exp);
           navigate(`/`);
