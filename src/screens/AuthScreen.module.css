@@ -5,6 +5,7 @@
 
 .title {
     color: #0E181B;
+    font-family: 'Outfit', sans-serif;
     text-align: center;
     border-bottom: 1.5px solid #7A7A7A;
     padding-top: 7rem;
@@ -41,6 +42,7 @@
 }
 
 .form-input {
+    font-family: 'Manrope', sans-serif;
     width: 300px;
     background-color: #FFFFFF;
     outline-color: #477998;
@@ -61,6 +63,7 @@
 
 .invalid-entry {
     color: #d30303;
+    font-family: 'Outfit', sans-serif;
     font-size: .8rem;
     padding-bottom: .2rem;
 }
@@ -77,6 +80,7 @@
     background-color: #0E181B;
     border: 1px solid #0E181B;
     border-radius: 2px;
+    font-family: 'Outfit', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.2s ease-in-out;
@@ -93,6 +97,7 @@
     color: #7A7A7A;
     background-color: transparent;
     border: none;
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     letter-spacing: 1px;
 }
