@@ -63,3 +63,9 @@
         font-size: .8rem;
     }
 }
+
+@media only screen and (min-width: 1543px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+}

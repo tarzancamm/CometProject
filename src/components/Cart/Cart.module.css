@@ -108,7 +108,8 @@
     }
 
     .exit-btn {
-        float: left;
+        margin-left: 0;
+        padding-left: 0;
     }
 
     .checkout {
