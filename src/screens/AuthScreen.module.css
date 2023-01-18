@@ -113,4 +113,8 @@
     .title-container {
         margin-top: 4rem;
     }
+
+    .form-btn {
+        font-size: 1.2rem;
+    }
 }
