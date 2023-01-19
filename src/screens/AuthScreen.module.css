@@ -53,6 +53,8 @@
 }
 
 .invalid {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
     background-color: #FFFFFF;
     border: none;
     border: 2px solid #d30303;
@@ -65,7 +67,7 @@
 .invalid-entry {
     color: #d30303;
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
+    font-size: .9rem;
     padding-bottom: .2rem;
 }
 
@@ -76,6 +78,7 @@
 }
 
 .form-input:placeholder-shown {
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
 }
 
@@ -116,6 +119,10 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .title-container {
         margin-top: 4rem;
+    }
+
+    .title {
+        padding-top: 6rem;
     }
 
     .form-btn {
