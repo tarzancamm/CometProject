@@ -37,7 +37,7 @@ const HomeScreen = () => {
           </h2>
           <p className={styles["intro-description"]} id="product">
             Our shorts leave aliens speechless, boomers in stretchers, and your
-            mom worried about other girls at the gym. Designed to balance
+            wife worried about other girls at the gym. Designed to balance
             performance with style. Tested by atheletes.
           </p>
         </div>
