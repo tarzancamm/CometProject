@@ -1,17 +1,15 @@
 .footer {
-    position: sticky;
-    height: 150px;
-    width: 100vw;
-    bottom: 0;
-    color: #EFEFEF;
-    background-color: #0E181B;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 140px;
+    width: 100vw;
+    color: #EFEFEF;
+    background-color: #0E181B;
 }
 
 .footer p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     font-family: 'Mulish', sans-serif;;
 }
