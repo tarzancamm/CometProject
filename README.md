@@ -16,7 +16,7 @@
 * Express
 * PostgreSQL
 
-Users can shop for the greatest gym shorts in the galaxy. An authentication system uses bcrypt and jwt to securely login users and persist the logged in state for 24 hours. Users can view shorts on the homepage, access further details and add shorts to their cart. The cart can be viewed from anywhere in the app, where users can remove items they no longer wish to buy, and checkout when ready.
+Great gym shorts are tough to find. Comet is an eCommerce app with the greatest gym shorts in the galaxy. An authentication system uses bcrypt and jwt to securely login users and persist the logged in state for 24 hours. Users can view shorts on the homepage, access further details and add shorts to their cart. The cart can be viewed from anywhere in the app, where users can remove items they no longer wish to buy, and checkout when ready.
 
 ![homepage hero view](./src/assets/Comet-Homescreen-Hero.png)
 ![homepage product view](./src/assets/Comet-Homescreen-Products.png)
