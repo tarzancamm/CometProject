@@ -1,5 +1,5 @@
 Comet - eCommerce App
-======
+***
 
 [Try the App](https://cometproject.herokuapp.com/)
 
