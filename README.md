@@ -1,11 +1,11 @@
-Comet - eCommerce App
-***
+ Comet - eCommerce App
+ ======
 
 [Try the App](https://cometproject.herokuapp.com/)
 
 [Watch a Demo](https://vimeo.com/790966087)
 
-[Learn more about the developer](www.linkedin.com/in/cameron-miner-professional/)
+[Learn more about the developer](www.linkedin.com/in/cameron-miner-professional/) :man_astronaut:
 
 ***
 
