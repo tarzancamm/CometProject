@@ -7,7 +7,7 @@ Comet - eCommerce App
 
 [Learn more about the developer](www.linkedin.com/in/cameron-miner-professional/)
 
-======
+***
 
 ### Tech Stack
 
