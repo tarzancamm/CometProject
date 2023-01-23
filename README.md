@@ -1,27 +1,24 @@
-# Specs Capstone MVP
+ Comet
+ ======
 
-### What am I going to build?
-Comet
+![Try the App](https://cometproject.herokuapp.com/)
 
-### MVP
-Description: E-commerce site the greatest gym shorts in the galaxy
+![Watch a demo](https://vimeo.com/790966087)
 
-Features
-- User can register/login
-- User can add shorts to the cart
-- User can add/subtract quantity of shorts directly from the cart
-- Cart shows total price
-- On product page, user has search field and ability to filter shorts
-- User can click on an item to view a details page for that pair of shorts
+![Learn more about the developer](www.linkedin.com/in/cameron-miner-professional/)
 
-Future Features
-- Estimated delivery time on each product based on IP location
+Users can shop for the greatest gym shorts in the galaxy. An authentication system uses bcrypt and jwt to securely login users and persist the logged in state for 24 hours. Users can view shorts on the homepage, access further details and add shorts to their cart. The cart can be viewed from anywhere in the app, where users can remove items they no longer wish to buy, and checkout when ready.
 
-### Tech Needed
-- React
-- Node.js
-- Express
-- PostgreSQL
-- dbDesigner
-- Figma
-- Heroku
+./src/assets/Comet-Homescreen-Hero.png
+./src/assets/Comet-Homescreen-Products.png
+./src/assets/Comet-Authentication.png
+./src/assets/Comet-ProductDetails.png
+./src/assets/Comet-Cart.png
+
+#### Tech Stack
+
+* React
+* Node.js
+* Express
+* PostgreSQL
+* HTML/CSS
