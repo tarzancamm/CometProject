@@ -82,14 +82,14 @@ export const AuthContextProvider = (props) => {
     logoutTimer = setTimeout(logoutHandler, remainingExpTime); //Runs logout function after delay (remainingExpTime)
   };
 
-  // Anytime localData changes or logoutHandler runs, logoutHandler is run after remainingExp duration
+  // Any time localData changes or logoutHandler runs, logoutHandler is run after remainingExp duration
   useEffect(() => {
     if (localData) {
       logoutTimer = setTimeout(logoutHandler, localData.duration);
     }
   }, [localData, logoutHandler]);
 
-  // Holds values to be used by components conected to auth context
+  // Holds values to be used by components connected to auth context
   const contextValue = {
     token: token,
     login: loginHandler,

@@ -28,7 +28,7 @@ const {
 } = require("./controllers/shop");
 
 // Middleware to run on every endpoint
-server.use(express.json()); // Parse requests into JSON
+server.use(express.json()); // Parses incoming JSON requests and puts the parsed data in req.body
 server.use(cors()); // Client & Server can run on seperate ports
 
 // For Heroku deployment

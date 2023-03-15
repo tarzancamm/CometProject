@@ -41,13 +41,6 @@ const HomeScreen = () => {
             performance with style. Tested by atheletes.
           </p>
         </div>
-        {/* <input
-          type="text"
-          onChange={changeProductsHandler}
-          value={searchedProducts}
-          placeholder="Search"
-          className={styles.search}
-        /> */}
       </div>
       <ProductContainer products={products} />
     </div>
