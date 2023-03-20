@@ -67,7 +67,7 @@ let photos = [
   },
   {
     productId: 5,
-    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/Rudy_Black_Friday-495_800x.jpg?v=1669087079",
+    url: "https://cdn.shopify.com/s/files/1/1775/6429/products/Jerdan-8.7.22-115_1206x1800.jpg?v=1660847550",
     primaryPhoto: true,
   },
   {
